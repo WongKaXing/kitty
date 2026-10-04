@@ -18,9 +18,7 @@ close_on_child_death                         yes
 # 窗口样式
 # 窗口边框
 # hide_window_decorations                    titlebar-only\titlebar-and-corners\yes\no
-hide_window_decorations                      titlebar-and-corners
-# 全屏用传统模式（不新建 Space），否则原生全屏背后是黑底，背景透明度会失效
-macos_traditional_fullscreen                 yes
+hide_window_decorations                      titlebar-only
 remember_window_size                         yes
 # 窗口边距
 window_padding_width                         0 10 0 10
@@ -30,17 +28,18 @@ enabled_layouts                              fat:bias=50,tall:bias=50,stack
 # 背景
 background_blur                              0
 # 背景透明度
-background_opacity                           0.25
-# background_opacity                           0.65
-# background_opacity                           0
+# background_opacity                           0.51
+# background_opacity                           0.85
+background_opacity                           0
 
 # 光标颜色使用当前文本颜色
 cursor                                       none
+cursor_shape                                 underline
 cursor_trail                                 1
 cursor_trail_decay                           0.1 0.4
 # 当移动1个字符位置时也使用动效，这样看着更平滑
 cursor_trail_start_threshold                 0
-cursor_blink_interval                        0.5 ease-in-out
+cursor_blink_interval                        0.8 ease-in-out
 
 # bar tab
 # Tab bar 边线样式
