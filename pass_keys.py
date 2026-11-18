@@ -3,7 +3,7 @@ import re
 from kittens.tui.handler import result_handler
 from kitty.key_encoding import KeyEvent, parse_shortcut
 
-PASSTHROUGH = r"\b(vim|nvim|fzf)\b"
+PASSTHROUGH = r'\b(vim|nvim|fzf)\b'
 
 
 # Return True if any foreground process in the window matches PASSTHROUGH
@@ -14,7 +14,7 @@ def is_window_passthrough(window):
     # Check if any argument in a process's cmdline matches PASSTHROUGH,
     # including when launched via wrappers or pipelines (e.g., "zoxide query | fzf")
     def is_process_passthrough(p):
-        return any(re.search(PASSTHROUGH, arg, re.IGNORECASE) for arg in p["cmdline"])
+        return any(re.search(PASSTHROUGH, arg, re.IGNORECASE) for arg in p['cmdline'])
 
     return any(is_process_passthrough(p) for p in fp)
 
@@ -48,7 +48,7 @@ def handle_result(args, result, target_window_id, boss):
     if window is None:
         return
     if is_window_passthrough(window):
-        for keymap in key_mapping.split(">"):
+        for keymap in key_mapping.split('>'):
             encoded = encode_key_mapping(window, keymap)
             window.write_to_child(encoded)
     else:
